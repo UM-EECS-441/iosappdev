@@ -1,0 +1,6 @@
+framework module Pods_remedy {
+  umbrella header "Pods-remedy-umbrella.h"
+
+  export *
+  module * { export * }
+}
