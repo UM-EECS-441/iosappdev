@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 class GeoData {
     var lat: Double
@@ -32,6 +33,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getPharmacies()
         
         // Configure the location manager.
         locmanager.delegate = self
@@ -103,7 +106,6 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
                 return "resting"
         }
     }
-    
     func getPharmacies(){
         //let userLat = 42.276780
         //let userLon = -83.732190
@@ -111,5 +113,20 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
         var request = URLRequest(url: URL(string: requestURL)!)
         request.httpMethod = "GET"
         
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                let entry = json["results"] as? [[String]] ?? []
+                for dict in entry{
+                    print(dict)
+                }
+            } catch let error as NSError {
+                print(error)
+            }
+            return
+        }
+    }
+    task.resume()
     }
 }
