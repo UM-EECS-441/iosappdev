@@ -7,4 +7,5 @@ target 'remedy' do
 
   # Pods for remedy
   pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end
