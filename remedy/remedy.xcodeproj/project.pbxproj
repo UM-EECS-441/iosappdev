@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		96955BA6254663F400945E0C /* PharmacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96955BA5254663F400945E0C /* PharmacyVC.swift */; };
 		96CC9F16254678C000F6DC1D /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */; };
 		96CC9F1925467C9100F6DC1D /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC9F1825467C9100F6DC1D /* DriverVC.swift */; };
+		96DC5BA9254A1F1E00371871 /* PharmacyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DC5BA8254A1F1E00371871 /* PharmacyTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		96955BA5254663F400945E0C /* PharmacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyVC.swift; sourceTree = "<group>"; };
 		96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
 		96CC9F1825467C9100F6DC1D /* DriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
+		96DC5BA8254A1F1E00371871 /* PharmacyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyTableCell.swift; sourceTree = "<group>"; };
 		993C0F741472FD58402652D8 /* Pods-remedy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-remedy.release.xcconfig"; path = "Target Support Files/Pods-remedy/Pods-remedy.release.xcconfig"; sourceTree = "<group>"; };
 		E8FA7C144071B0C3423475FE /* Pods-remedy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-remedy.debug.xcconfig"; path = "Target Support Files/Pods-remedy/Pods-remedy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 				96955BA5254663F400945E0C /* PharmacyVC.swift */,
 				96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */,
 				96CC9F1825467C9100F6DC1D /* DriverVC.swift */,
+				96DC5BA8254A1F1E00371871 /* PharmacyTableCell.swift */,
 			);
 			path = remedy;
 			sourceTree = "<group>";
@@ -89,7 +92,6 @@
 				E8FA7C144071B0C3423475FE /* Pods-remedy.debug.xcconfig */,
 				993C0F741472FD58402652D8 /* Pods-remedy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -220,6 +222,7 @@
 				96955BA6254663F400945E0C /* PharmacyVC.swift in Sources */,
 				42472FF12531015E003E2410 /* AppDelegate.swift in Sources */,
 				96CC9F1925467C9100F6DC1D /* DriverVC.swift in Sources */,
+				96DC5BA9254A1F1E00371871 /* PharmacyTableCell.swift in Sources */,
 				42472FF32531015E003E2410 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,8 +48,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
             // Get user's location
             geodata.lat = location.coordinate.latitude
             geodata.lon = location.coordinate.longitude
-            print(geodata.lat)
-            print(geodata.lon)
+            //print(geodata.lat)
+            //print(geodata.lon)
             // Reverse geocode to get user's city name
             let geocoder = GMSGeocoder()
             geocoder.reverseGeocodeCoordinate(location.coordinate) { response , error in
@@ -102,5 +102,14 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
             default:
                 return "resting"
         }
+    }
+    
+    func getPharmacies(){
+        //let userLat = 42.276780
+        //let userLon = -83.732190
+        let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=42.276780,-83.732190&rankby=distance&type=pharmacy&key=AIzaSyBwVdb3vtPPg_RuaVwaKDlWOLN3woENo6Y"
+        var request = URLRequest(url: URL(string: requestURL)!)
+        request.httpMethod = "GET"
+        
     }
 }
