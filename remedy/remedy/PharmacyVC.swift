@@ -8,6 +8,17 @@
 import Foundation
 import UIKit
 import GoogleMaps
+import GooglePlaces
+
+class pharmacy {
+    var name: String
+    var address: String
+    
+  init(name: String, address: String) {
+        self.name = username
+        self.address = address
+    }
+}
 
 class GeoData {
     var lat: Double
@@ -29,6 +40,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
     
     let locmanager = CLLocationManager()
     var geodata = GeoData(lat: 0.0, lon: 0.0, loc: "", facing: "", speed: "")
+  
+    var pharmacies = [pharmacy]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +54,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
         // and start getting user's current location and heading
         locmanager.startUpdatingLocation()
         locmanager.startUpdatingHeading()
+      
+      getPharmacies()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -71,7 +86,6 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
             locmanager.stopUpdatingLocation()
         }
     }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         if (newHeading.headingAccuracy < 0) {
             // unreliable reading, try again
@@ -103,4 +117,30 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate{
                 return "resting"
         }
     }
+    
+    func getPharmacies(){
+        //let userLat = 42.276780
+        //let userLon = -83.732190
+        let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=42.276780,-83.732190&rankby=distance&type=pharmacy&key=AIzaSyBwVdb3vtPPg_RuaVwaKDlWOLN3woENo6Y"
+        var request = URLRequest(url: URL(string: requestURL)!)
+        request.httpMethod = "GET"
+        
+      var pharmname
+      
+        // Create the HTTP request
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, response, error) in
+           guard let _ = data, error == nil else {
+            do {
+              let json = try JSONSerialization.jsonObject(with: <#T##Data#>!) as! [String: Any]
+              
+              let pharmsReceived = json["results"] as? [[String]] ?? []
+              for pharmEntry in pharmsReceived {
+                let pharm = pharmacy(name: pharmEntry["name"], address: pharmEntry["vicinity"])
+                print(pharm["name"])
+              }
+            }
+           }
+         }
+      }
 }
