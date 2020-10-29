@@ -3,23 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		327FECAEE91B4A8A9D3A4675 /* Pods_remedy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD0DA1EBD1C68FFE4EB0202 /* Pods_remedy.framework */; };
+		37720044254A6BBA006E31F4 /* PharmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37720043254A6BBA006E31F4 /* PharmVC.swift */; };
 		42472FF12531015E003E2410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42472FF02531015E003E2410 /* AppDelegate.swift */; };
 		42472FF32531015E003E2410 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42472FF22531015E003E2410 /* SceneDelegate.swift */; };
 		42472FF52531015E003E2410 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42472FF42531015E003E2410 /* ViewController.swift */; };
 		42472FF82531015E003E2410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42472FF62531015E003E2410 /* Main.storyboard */; };
 		42472FFA25310162003E2410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42472FF925310162003E2410 /* Assets.xcassets */; };
 		42472FFD25310162003E2410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42472FFB25310162003E2410 /* LaunchScreen.storyboard */; };
-		96955BA6254663F400945E0C /* PharmacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96955BA5254663F400945E0C /* PharmacyVC.swift */; };
 		96CC9F16254678C000F6DC1D /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */; };
 		96CC9F1925467C9100F6DC1D /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC9F1825467C9100F6DC1D /* DriverVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37720043254A6BBA006E31F4 /* PharmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmVC.swift; sourceTree = "<group>"; };
 		42472FED2531015E003E2410 /* remedy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = remedy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42472FF02531015E003E2410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42472FF22531015E003E2410 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		42472FFC25310162003E2410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42472FFE25310163003E2410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD0DA1EBD1C68FFE4EB0202 /* Pods_remedy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_remedy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96955BA5254663F400945E0C /* PharmacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyVC.swift; sourceTree = "<group>"; };
 		96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
 		96CC9F1825467C9100F6DC1D /* DriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
 		993C0F741472FD58402652D8 /* Pods-remedy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-remedy.release.xcconfig"; path = "Target Support Files/Pods-remedy/Pods-remedy.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,9 +76,9 @@
 				42472FF925310162003E2410 /* Assets.xcassets */,
 				42472FFB25310162003E2410 /* LaunchScreen.storyboard */,
 				42472FFE25310163003E2410 /* Info.plist */,
-				96955BA5254663F400945E0C /* PharmacyVC.swift */,
 				96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */,
 				96CC9F1825467C9100F6DC1D /* DriverVC.swift */,
+				37720043254A6BBA006E31F4 /* PharmVC.swift */,
 			);
 			path = remedy;
 			sourceTree = "<group>";
@@ -89,7 +89,6 @@
 				E8FA7C144071B0C3423475FE /* Pods-remedy.debug.xcconfig */,
 				993C0F741472FD58402652D8 /* Pods-remedy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,7 +216,7 @@
 			files = (
 				96CC9F16254678C000F6DC1D /* ConfirmationVC.swift in Sources */,
 				42472FF52531015E003E2410 /* ViewController.swift in Sources */,
-				96955BA6254663F400945E0C /* PharmacyVC.swift in Sources */,
+				37720044254A6BBA006E31F4 /* PharmVC.swift in Sources */,
 				42472FF12531015E003E2410 /* AppDelegate.swift in Sources */,
 				96CC9F1925467C9100F6DC1D /* DriverVC.swift in Sources */,
 				42472FF32531015E003E2410 /* SceneDelegate.swift in Sources */,
