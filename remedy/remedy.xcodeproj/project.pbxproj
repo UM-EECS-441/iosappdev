@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		327FECAEE91B4A8A9D3A4675 /* Pods_remedy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD0DA1EBD1C68FFE4EB0202 /* Pods_remedy.framework */; };
-		37720044254A6BBA006E31F4 /* PharmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37720043254A6BBA006E31F4 /* PharmVC.swift */; };
+		37720044254A6BBA006E31F4 /* PharmacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37720043254A6BBA006E31F4 /* PharmacyVC.swift */; };
 		42472FF12531015E003E2410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42472FF02531015E003E2410 /* AppDelegate.swift */; };
 		42472FF32531015E003E2410 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42472FF22531015E003E2410 /* SceneDelegate.swift */; };
 		42472FF52531015E003E2410 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42472FF42531015E003E2410 /* ViewController.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37720043254A6BBA006E31F4 /* PharmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmVC.swift; sourceTree = "<group>"; };
+		37720043254A6BBA006E31F4 /* PharmacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyVC.swift; sourceTree = "<group>"; };
 		42472FED2531015E003E2410 /* remedy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = remedy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42472FF02531015E003E2410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42472FF22531015E003E2410 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				42472FFE25310163003E2410 /* Info.plist */,
 				96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */,
 				96CC9F1825467C9100F6DC1D /* DriverVC.swift */,
-				37720043254A6BBA006E31F4 /* PharmVC.swift */,
+				37720043254A6BBA006E31F4 /* PharmacyVC.swift */,
 			);
 			path = remedy;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			files = (
 				96CC9F16254678C000F6DC1D /* ConfirmationVC.swift in Sources */,
 				42472FF52531015E003E2410 /* ViewController.swift in Sources */,
-				37720044254A6BBA006E31F4 /* PharmVC.swift in Sources */,
+				37720044254A6BBA006E31F4 /* PharmacyVC.swift in Sources */,
 				42472FF12531015E003E2410 /* AppDelegate.swift in Sources */,
 				96CC9F1925467C9100F6DC1D /* DriverVC.swift in Sources */,
 				42472FF32531015E003E2410 /* SceneDelegate.swift in Sources */,

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PharmVC-->
+        <!--PharmacyVC-->
         <scene sceneID="wN3-1t-ulH">
             <objects>
-                <viewController id="P42-yG-RBX" customClass="PharmVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P42-yG-RBX" customClass="PharmacyVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ddt-AP-fSm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

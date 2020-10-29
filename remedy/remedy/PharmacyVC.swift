@@ -19,7 +19,7 @@ class GeoData_1 {
     }
 }
 
-class PharmVC: UIViewController, CLLocationManagerDelegate {
+class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
@@ -128,7 +128,7 @@ class PharmVC: UIViewController, CLLocationManagerDelegate {
 
 
 // Handle the user's selection.b
-extension PharmVC: GMSAutocompleteResultsViewControllerDelegate {
+extension PharmacyVC: GMSAutocompleteResultsViewControllerDelegate {
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                          didAutocompleteWith place: GMSPlace) {
     searchController?.isActive = false
