@@ -43,6 +43,10 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
 
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
+        
+        let filter = GMSAutocompleteFilter()
+        filter.type = .establishment
+        resultsViewController?.autocompleteFilter = filter
 
         let subView = UIView(frame: CGRect(x: 0, y: 65.0, width: 350.0, height: 45.0))
 
@@ -135,6 +139,7 @@ extension PharmacyVC: GMSAutocompleteResultsViewControllerDelegate {
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                          didAutocompleteWith place: GMSPlace) {
     searchController?.isActive = false
+    
     // Do something with the selected place.
     print("Place name: \(place.name)")
     print("Place address: \(place.formattedAddress)")
