@@ -8,4 +8,5 @@ target 'remedy' do
   # Pods for remedy
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'SwiftyJSON', '~> 4.0'
 end
