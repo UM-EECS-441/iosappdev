@@ -11,19 +11,19 @@
         <!--PharmacyVC-->
         <scene sceneID="wN3-1t-ulH">
             <objects>
-                <viewController id="P42-yG-RBX" customClass="PharmacyVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PharmacyVC" id="P42-yG-RBX" customClass="PharmacyVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ddt-AP-fSm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pharmacies Near Me" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCc-gD-S6d">
-                                <rect key="frame" x="64" y="141" width="286" height="45"/>
+                                <rect key="frame" x="47" y="140" width="286" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy title" translatesAutoresizingMaskIntoConstraints="NO" id="xt5-nP-jjp">
-                                <rect key="frame" x="145" y="39" width="120" height="22"/>
+                                <rect key="frame" x="130" y="37" width="120" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -41,28 +41,39 @@
         <!--ConfirmationVC-->
         <scene sceneID="zhC-wv-Ean">
             <objects>
-                <viewController id="VJn-Cm-iV3" customClass="ConfirmationVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmationVC" id="VJn-Cm-iV3" customClass="ConfirmationVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="feW-Nj-myC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy title" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-A6-yvt">
-                                <rect key="frame" x="87" y="50" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-QY-0OY">
-                                <rect key="frame" x="184" y="576" width="46" height="30"/>
+                                <rect key="frame" x="160" y="545" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Confirm"/>
                                 <connections>
                                     <segue destination="ehx-aM-4mL" kind="show" id="O5k-Wr-oOO"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy title" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-A6-yvt">
+                                <rect key="frame" x="32" y="79" width="311" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-tl-zPe">
+                                <rect key="frame" x="32" y="199" width="311" height="309"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w4A-8C-G8a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="I9A-PJ-N6Z"/>
+                    <connections>
+                        <outlet property="confirmBoxText" destination="WzT-tl-zPe" id="wLR-xe-TVm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJM-aB-1lD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,69 +95,8 @@
             </objects>
             <point key="canvasLocation" x="-314" y="-745"/>
         </scene>
-        <!--ConfirmVC-->
-        <scene sceneID="a0n-rS-foc">
-            <objects>
-                <viewController id="xK0-YA-1dd" customClass="ConfirmVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="py2-iy-nrB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyu-1w-dhF" userLabel="back_button">
-                                <rect key="frame" x="20" y="67" width="60" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="back_button"/>
-                                <state key="normal" image="arrow.left" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="29" scale="large"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wvx-UK-SlJ">
-                                <rect key="frame" x="135" y="642" width="145" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Confirm">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="150"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="BKN-Si-v4W" kind="presentation" id="EsM-GX-ba0"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy title" translatesAutoresizingMaskIntoConstraints="NO" id="n5g-b9-rrt">
-                                <rect key="frame" x="87" y="119" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="BDl-kR-X5l"/>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YSN-l2-KKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="763.768115942029" y="77.678571428571431"/>
-        </scene>
-        <!--DriverVC-->
-        <scene sceneID="XBz-c9-64y">
-            <objects>
-                <viewController id="BKN-Si-v4W" customClass="DriverVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="s9D-CH-goV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="onj-SA-LbM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOT-0v-goE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1683" y="78"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Confirm" width="246" height="110"/>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="remedy title" width="408" height="136"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

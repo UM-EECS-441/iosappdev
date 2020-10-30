@@ -7,10 +7,16 @@ import SwiftyJSON
 class pharmacy {
     var name: String
     var address: String
+    var lat: Double
+    var lon: Double
+    var open: Bool
     
-  init(name: String, address: String) {
+    init(name: String, address: String, lat: Double, lon: Double, open: Bool) {
         self.name = name
         self.address = address
+        self.lat = lat
+        self.lon = lon
+        self.open = open
     }
 }
 
@@ -34,6 +40,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     var geodata = GeoData_1(lat: 0.0, lon: 0.0)
     
     var pharmacies = [pharmacy]()
+    
+    var button_tag = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +75,6 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
 
         // and start getting user's current location and heading
         locmanager.startUpdatingLocation()
-        locmanager.startUpdatingHeading()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -82,17 +89,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        if (newHeading.headingAccuracy < 0) {
-            // unreliable reading, try again
-            return
-        }
-        locmanager.stopUpdatingHeading()
-    }
-    
     func getPharmList() {
-        locmanager.startUpdatingLocation()
-        let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=42.274829,-83.729844&rankby=distance&type=drugstore&key=AIzaSyBwVdb3vtPPg_RuaVwaKDlWOLN3woENo6Y"
+        let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(geodata.lat),\(geodata.lon)&rankby=distance&type=drugstore&key=AIzaSyBwVdb3vtPPg_RuaVwaKDlWOLN3woENo6Y"
 
         var request = URLRequest(url: URL(string: requestURL)!)
         request.httpMethod = "GET"
@@ -100,16 +98,10 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let _ = data, error == nil else {
                 print("NETWORKING ERROR")
-                DispatchQueue.main.async {
-                    self.getPharmList()
-                }
                 return
             }
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 print("HTTP STATUS: \(httpStatus.statusCode)")
-                DispatchQueue.main.async {
-                    self.getPharmList()
-                }
                 return
             }
             
@@ -121,27 +113,22 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
                 var y_val = 200
                 var i = 0;
                 for pharm in json["results"] {
-//                    print(pharm)
-//                    print(pharm.1["name"])
-//                    print(pharm.1["vicinity"])
-//                    print(pharm.1["geometry"]["location"]["lat"])
-//                    print(pharm.1["geometry"]["location"]["lng"])
-//                    print(pharm.1["opening_hours"]["open_now"])
-                    
                     let name = pharm.1["name"].string
                     let address = pharm.1["vicinity"].string
                     let lat = pharm.1["geometry"]["location"]["lat"].double
-                    let lng = pharm.1["geometry"]["location"]["lng"].double
+                    let lon = pharm.1["geometry"]["location"]["lng"].double
                     let open = pharm.1["opening_hours"]["open_now"].bool
-                    let image_url = pharm.1["photos"]
+                    let sing_pharm = pharmacy(name: name!, address: address!, lat: lat!, lon: lon!, open: open!)
+                    self.pharmacies.append(sing_pharm)
                     
                     
                     let btn = UIButton(type: .custom) as UIButton
+                    btn.tag = i
                     btn.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
                     btn.setTitle("\(name!)\n\(address!)", for: .normal)
                     btn.titleLabel?.textAlignment = NSTextAlignment.center
                     btn.titleLabel?.lineBreakMode = .byWordWrapping
-                    btn.frame = CGRect(x: 50, y: y_val, width: 320, height: 100)
+                    btn.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
                     btn.layer.cornerRadius = 30
                     btn.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
                     btn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -168,7 +155,23 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     
     @objc func clickMe(sender:UIButton!) {
         print("Button Clicked")
+        print(sender.tag)
+        print(self.pharmacies[sender.tag].address)
+        print("done")
+        button_tag = sender.tag
+        
         performSegue(withIdentifier: "toConfirmation", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ConfirmationVC {
+            let vc = segue.destination as? ConfirmationVC
+            vc?.pharmacy_name = pharmacies[button_tag].name
+            vc?.pharmacy_address = pharmacies[button_tag].address
+            vc?.pharmacy_lat = pharmacies[button_tag].lat
+            vc?.pharmacy_lon = pharmacies[button_tag].lon
+            vc?.pharmacy_open = pharmacies[button_tag].open
+        }
     }
     
    
