@@ -9,14 +9,12 @@ class pharmacy {
     var address: String
     var lat: Double
     var lon: Double
-    var open: Bool
     
-    init(name: String, address: String, lat: Double, lon: Double, open: Bool) {
+    init(name: String, address: String, lat: Double, lon: Double) {
         self.name = name
         self.address = address
         self.lat = lat
         self.lon = lon
-        self.open = open
     }
 }
 
@@ -32,6 +30,18 @@ class GeoData_1 {
 
 class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     
+
+    @IBOutlet weak var pharmacy_one: UIButton!
+    
+    @IBOutlet weak var pharmacy_two: UIButton!
+    
+    @IBOutlet weak var pharmacy_three: UIButton!
+    
+    @IBOutlet weak var pharmacy_four: UIButton!
+    
+    @IBOutlet weak var pharmacy_five: UIButton!
+    
+    
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
@@ -45,6 +55,87 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // pharmacy_one
+        pharmacy_one.tag = 1
+        pharmacy_one.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
+        pharmacy_one.setTitleColor(.white, for: .normal)
+        pharmacy_one.titleLabel?.textAlignment = NSTextAlignment.center
+        pharmacy_one.titleLabel?.lineBreakMode = .byWordWrapping
+        // pharmacy_one.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
+        pharmacy_one.layer.cornerRadius = 20
+        pharmacy_one.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
+        pharmacy_one.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        pharmacy_one.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        pharmacy_one.layer.shadowOpacity = 1.0
+        pharmacy_one.layer.shadowRadius = 0.4
+        pharmacy_one.layer.masksToBounds = false
+        view.addSubview(self.pharmacy_one)
+        
+        // pharmacy_two
+        pharmacy_two.tag = 2
+        pharmacy_two.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
+        pharmacy_two.setTitleColor(.white, for: .normal)
+        pharmacy_two.titleLabel?.textAlignment = NSTextAlignment.center
+        pharmacy_two.titleLabel?.lineBreakMode = .byWordWrapping
+        // pharmacy_two.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
+        pharmacy_two.layer.cornerRadius = 20
+        pharmacy_two.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
+        pharmacy_two.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        pharmacy_two.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        pharmacy_two.layer.shadowOpacity = 1.0
+        pharmacy_two.layer.shadowRadius = 0.4
+        pharmacy_two.layer.masksToBounds = false
+        view.addSubview(self.pharmacy_two)
+        
+        // pharmacy_three
+        pharmacy_three.tag = 3
+        pharmacy_three.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
+        pharmacy_three.setTitleColor(.white, for: .normal)
+        pharmacy_three.titleLabel?.textAlignment = NSTextAlignment.center
+        pharmacy_three.titleLabel?.lineBreakMode = .byWordWrapping
+        // pharmacy_three.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
+        pharmacy_three.layer.cornerRadius = 20
+        pharmacy_three.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
+        pharmacy_three.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        pharmacy_three.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        pharmacy_three.layer.shadowOpacity = 1.0
+        pharmacy_three.layer.shadowRadius = 0.4
+        pharmacy_three.layer.masksToBounds = false
+        view.addSubview(self.pharmacy_three)
+        
+        // pharmacy_four
+        pharmacy_four.tag = 4
+        pharmacy_four.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
+        pharmacy_four.setTitleColor(.white, for: .normal)
+        pharmacy_four.titleLabel?.textAlignment = NSTextAlignment.center
+        pharmacy_four.titleLabel?.lineBreakMode = .byWordWrapping
+        // pharmacy_four.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
+        pharmacy_four.layer.cornerRadius = 20
+        pharmacy_four.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
+        pharmacy_four.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        pharmacy_four.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        pharmacy_four.layer.shadowOpacity = 1.0
+        pharmacy_four.layer.shadowRadius = 0.4
+        pharmacy_four.layer.masksToBounds = false
+        view.addSubview(self.pharmacy_four)
+        
+        // pharmacy_five
+        pharmacy_five.tag = 5
+        pharmacy_five.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
+        pharmacy_five.setTitleColor(.white, for: .normal)
+        pharmacy_five.titleLabel?.textAlignment = NSTextAlignment.center
+        pharmacy_five.titleLabel?.lineBreakMode = .byWordWrapping
+        // pharmacy_five.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
+        pharmacy_five.layer.cornerRadius = 20
+        pharmacy_five.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
+        pharmacy_five.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        pharmacy_five.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        pharmacy_five.layer.shadowOpacity = 1.0
+        pharmacy_five.layer.shadowRadius = 0.4
+        pharmacy_five.layer.masksToBounds = false
+        view.addSubview(self.pharmacy_five)
+        
         
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
@@ -82,14 +173,14 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
             // Get user's location
             geodata.lat = location.coordinate.latitude
             geodata.lon = location.coordinate.longitude
-            print(geodata.lat)
-            print(geodata.lon)
             getPharmList()
             locmanager.stopUpdatingLocation()
         }
     }
     
     func getPharmList() {
+        print("test")
+        print(geodata.lat, geodata.lon)
         let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(geodata.lat),\(geodata.lon)&rankby=distance&type=drugstore&key=AIzaSyBwVdb3vtPPg_RuaVwaKDlWOLN3woENo6Y"
 
         var request = URLRequest(url: URL(string: requestURL)!)
@@ -108,44 +199,52 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
             do {
               
                 let json = JSON(try JSONSerialization.jsonObject(with: data!) as! [String:Any])
-//                print(json)
                 
-                var y_val = 200
-                var i = 0;
+                // loading in pharmacies to UI
+                self.pharmacy_one.setTitle("\((json["results"][1]["name"].string)!)\n\n\((json["results"][1]["vicinity"].string)!)", for: .normal)
+                self.pharmacy_two.setTitle("\((json["results"][2]["name"].string)!)\n\n\((json["results"][2]["vicinity"].string)!)", for: .normal)
+                self.pharmacy_three.setTitle("\((json["results"][3]["name"].string)!)\n\n\((json["results"][3]["vicinity"].string)!)", for: .normal)
+                self.pharmacy_four.setTitle("\((json["results"][4]["name"].string)!)\n\n\((json["results"][4]["vicinity"].string)!)", for: .normal)
+                self.pharmacy_five.setTitle("\((json["results"][5]["name"].string)!)\n\n\((json["results"][5]["vicinity"].string)!)", for: .normal)
+                
+//                var y_val = 200
+//                var i = 0;
+                
                 for pharm in json["results"] {
                     let name = pharm.1["name"].string
                     let address = pharm.1["vicinity"].string
                     let lat = pharm.1["geometry"]["location"]["lat"].double
                     let lon = pharm.1["geometry"]["location"]["lng"].double
                     let open = pharm.1["opening_hours"]["open_now"].bool
-                    let sing_pharm = pharmacy(name: name!, address: address!, lat: lat!, lon: lon!, open: open!)
+                    let sing_pharm = pharmacy(name: name!, address: address!, lat: lat!, lon: lon!)
                     self.pharmacies.append(sing_pharm)
                     
                     
-                    let btn = UIButton(type: .custom) as UIButton
-                    btn.tag = i
-                    btn.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
-                    btn.setTitle("\(name!)\n\(address!)", for: .normal)
-                    btn.titleLabel?.textAlignment = NSTextAlignment.center
-                    btn.titleLabel?.lineBreakMode = .byWordWrapping
-                    btn.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
-                    btn.layer.cornerRadius = 30
-                    btn.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
-                    btn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-                    btn.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-                    btn.layer.shadowOpacity = 1.0
-                    btn.layer.shadowRadius = 0.4
-                    btn.layer.masksToBounds = false
-                    self.view.addSubview(btn)
-                    
-
-                    y_val = y_val + 120
-                    i = i + 1
-                    if i == 5 {
-                        break
-                    }
+//                    let btn = UIButton(type: .custom) as UIButton
+//                    btn.tag = i
+//                    btn.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
+//                    btn.setTitle("\(name!)\n\(address!)", for: .normal)
+//                    btn.titleLabel?.textAlignment = NSTextAlignment.center
+//                    btn.titleLabel?.lineBreakMode = .byWordWrapping
+//                    btn.frame = CGRect(x: 28, y: y_val, width: 320, height: 100)
+//                    btn.layer.cornerRadius = 30
+//                    btn.addTarget(self, action: #selector(self.clickMe), for: .touchUpInside)
+//                    btn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+//                    btn.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+//                    btn.layer.shadowOpacity = 1.0
+//                    btn.layer.shadowRadius = 0.4
+//                    btn.layer.masksToBounds = false
+//                    self.view.addSubview(btn)
+//
+//
+//                    y_val = y_val + 120
+//                    i = i + 1
+//                    if i == 5 {
+//                        break
+//                    }
                     
                 }
+                
             } catch let error as NSError {
                 print(error)
             }
@@ -170,7 +269,6 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
             vc?.pharmacy_address = pharmacies[button_tag].address
             vc?.pharmacy_lat = pharmacies[button_tag].lat
             vc?.pharmacy_lon = pharmacies[button_tag].lon
-            vc?.pharmacy_open = pharmacies[button_tag].open
         }
     }
     

@@ -13,7 +13,6 @@ class ConfirmationVC: UIViewController {
     var pharmacy_address = ""
     var pharmacy_lat = 0.0
     var pharmacy_lon = 0.0
-    var pharmacy_open = true
     
 
     @IBOutlet weak var confirmBoxText: UITextView!
@@ -30,6 +29,6 @@ class ConfirmationVC: UIViewController {
         confirmBoxText.layer.shadowRadius = 0.4
         confirmBoxText.layer.masksToBounds = false
         
-        print(pharmacy_name, pharmacy_address, pharmacy_lat, pharmacy_lon, pharmacy_open)
+        print(pharmacy_name, pharmacy_address, pharmacy_lat, pharmacy_lon)
     }
 }
