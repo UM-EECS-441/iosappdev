@@ -30,32 +30,47 @@
                                 <rect key="frame" x="37" y="317" width="306" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="loading..."/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZD-UZ-vjo">
                                 <rect key="frame" x="37" y="435" width="306" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="loading..."/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oe-Fr-qSn">
                                 <rect key="frame" x="37" y="199" width="306" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="loading..."/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3E-rZ-eha">
                                 <rect key="frame" x="37" y="554" width="306" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="loading..."/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4X-i1-O7H">
                                 <rect key="frame" x="37" y="673" width="306" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="loading..."/>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ynJ-5i-Jpg">
+                                <rect key="frame" x="172" y="232" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MCv-zd-LKX">
+                                <rect key="frame" x="172" y="350" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ydN-P9-fcA">
+                                <rect key="frame" x="172" y="468" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="PNu-gx-znU">
+                                <rect key="frame" x="172" y="587" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MgZ-GG-ByZ">
+                                <rect key="frame" x="172" y="706" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qrl-xl-7Ak"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,6 +82,11 @@
                         <outlet property="pharmacy_one" destination="3oe-Fr-qSn" id="Xd9-hr-VOi"/>
                         <outlet property="pharmacy_three" destination="TZD-UZ-vjo" id="TaK-rr-XXI"/>
                         <outlet property="pharmacy_two" destination="ke8-d9-87a" id="s89-fS-dgz"/>
+                        <outlet property="spinner1" destination="ynJ-5i-Jpg" id="OPs-o4-GGH"/>
+                        <outlet property="spinner2" destination="MCv-zd-LKX" id="JxX-T9-Bih"/>
+                        <outlet property="spinner3" destination="ydN-P9-fcA" id="sK8-II-GtX"/>
+                        <outlet property="spinner4" destination="PNu-gx-znU" id="Uej-L5-RL7"/>
+                        <outlet property="spinner5" destination="MgZ-GG-ByZ" id="Z2a-TL-4qa"/>
                         <segue destination="VJn-Cm-iV3" kind="show" identifier="toConfirmation" id="gOJ-io-rYo"/>
                     </connections>
                 </viewController>
@@ -82,26 +102,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-QY-0OY">
-                                <rect key="frame" x="160" y="545" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirm"/>
-                                <connections>
-                                    <segue destination="ehx-aM-4mL" kind="show" id="O5k-Wr-oOO"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy title" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-A6-yvt">
                                 <rect key="frame" x="32" y="79" width="311" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-tl-zPe">
-                                <rect key="frame" x="32" y="199" width="311" height="309"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-tl-zPe">
+                                <rect key="frame" x="32" y="199" width="311" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-QY-0OY">
+                                <rect key="frame" x="149" y="539" width="76" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ehx-aM-4mL" kind="show" id="O5k-Wr-oOO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w4A-8C-G8a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -109,6 +133,7 @@
                     <navigationItem key="navigationItem" id="I9A-PJ-N6Z"/>
                     <connections>
                         <outlet property="confirmBoxText" destination="WzT-tl-zPe" id="wLR-xe-TVm"/>
+                        <outlet property="confirmButton" destination="vLq-QY-0OY" id="ena-XF-wcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJM-aB-1lD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,21 +143,32 @@
         <!--DriverVC-->
         <scene sceneID="tiU-U9-ACc">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ehx-aM-4mL" customClass="DriverVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DriverVC" modalPresentationStyle="fullScreen" id="ehx-aM-4mL" customClass="DriverVC" customModule="remedy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lp6-YN-Jlq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkn-Ta-yBt">
-                                <rect key="frame" x="34" y="44" width="34" height="20"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="                                                                 Finding your       Driver" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-A6-AGZ">
+                                <rect key="frame" x="36" y="248" width="311" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                            </button>
+                                <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0Pi-9s-Zbr">
+                                <rect key="frame" x="141" y="383" width="100" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p4d-mo-vs2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="sOR-vG-CkP"/>
+                    <connections>
+                        <outlet property="driverBox" destination="hMN-A6-AGZ" id="iac-xk-Jcx"/>
+                        <outlet property="spinner" destination="0Pi-9s-Zbr" id="RqF-Js-Zav"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJG-zB-eWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
