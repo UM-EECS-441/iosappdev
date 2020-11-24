@@ -15,6 +15,7 @@
 		42472FF82531015E003E2410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42472FF62531015E003E2410 /* Main.storyboard */; };
 		42472FFA25310162003E2410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42472FF925310162003E2410 /* Assets.xcassets */; };
 		42472FFD25310162003E2410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42472FFB25310162003E2410 /* LaunchScreen.storyboard */; };
+		964516E9256D901F00FFFB89 /* UsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964516E8256D901F00FFFB89 /* UsernameVC.swift */; };
 		96CC9F16254678C000F6DC1D /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */; };
 		96CC9F1925467C9100F6DC1D /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC9F1825467C9100F6DC1D /* DriverVC.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		42472FFC25310162003E2410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42472FFE25310163003E2410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD0DA1EBD1C68FFE4EB0202 /* Pods_remedy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_remedy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		964516E8256D901F00FFFB89 /* UsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameVC.swift; sourceTree = "<group>"; };
 		96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
 		96CC9F1825467C9100F6DC1D /* DriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
 		993C0F741472FD58402652D8 /* Pods-remedy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-remedy.release.xcconfig"; path = "Target Support Files/Pods-remedy/Pods-remedy.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				96CC9F15254678C000F6DC1D /* ConfirmationVC.swift */,
 				96CC9F1825467C9100F6DC1D /* DriverVC.swift */,
 				37720043254A6BBA006E31F4 /* PharmacyVC.swift */,
+				964516E8256D901F00FFFB89 /* UsernameVC.swift */,
 			);
 			path = remedy;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				96CC9F16254678C000F6DC1D /* ConfirmationVC.swift in Sources */,
 				42472FF52531015E003E2410 /* ViewController.swift in Sources */,
+				964516E9256D901F00FFFB89 /* UsernameVC.swift in Sources */,
 				37720044254A6BBA006E31F4 /* PharmacyVC.swift in Sources */,
 				42472FF12531015E003E2410 /* AppDelegate.swift in Sources */,
 				96CC9F1925467C9100F6DC1D /* DriverVC.swift in Sources */,
