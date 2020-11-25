@@ -24,14 +24,11 @@ class DriverVC: UIViewController {
         loaded = true
         
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(loaded)
         sleep(4)
         spinner.stopAnimating()
         driverBox.text = "Boom"
     }
-    
-    
     
 }

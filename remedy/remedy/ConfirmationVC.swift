@@ -14,6 +14,8 @@ class ConfirmationVC: UIViewController {
     var pharmacy_lat = 0.0
     var pharmacy_lon = 0.0
     
+    var closestDriver = Driver()
+    
 
     @IBOutlet weak var confirmBoxText: UITextView!
     
@@ -40,5 +42,44 @@ class ConfirmationVC: UIViewController {
         confirmButton.layer.masksToBounds = false
         
         print(pharmacy_name, pharmacy_address, pharmacy_lat, pharmacy_lon)
+    }
+    
+    @IBAction func passPharmacy(_ sender: Any) {
+        let json: [String: Any] = ["username": "new_guy",
+                                "pharmacyLat": pharmacy_lat,
+                                "pharmacyLon": pharmacy_lon
+                                ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        var request = URLRequest(url: URL(string: "https://198.199.90.68/getclosestdriver/")!)
+        request.httpMethod = "GET"
+        request.httpBody = jsonData
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                print("NETWORKING ERROR")
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                self.closestDriver.first_name = json["first_name"] as? String ?? ""
+                self.closestDriver.last_name = json["last_name"] as? String ?? ""
+                self.closestDriver.car = json["car"] as? String ?? ""
+                self.closestDriver.rating = json["rating"] as? String ?? ""
+                self.closestDriver.lat = json["lat"] as? Float ?? 0
+                self.closestDriver.lon = json["lon"] as? Float ?? 0
+                self.closestDriver.duration = json["duration"] as? String ?? ""
+                self.closestDriver.distance = json["distance"] as? String ?? ""
+                print(self.closestDriver.first_name + " " + self.closestDriver.last_name)
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        task.resume()
+        dismiss(animated: true, completion: nil)
     }
 }

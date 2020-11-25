@@ -123,6 +123,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="passPharmacy:" destination="VJn-Cm-iV3" eventType="touchUpInside" id="yAA-ji-X7I"/>
                                     <segue destination="ehx-aM-4mL" kind="show" id="O5k-Wr-oOO"/>
                                 </connections>
                             </button>
