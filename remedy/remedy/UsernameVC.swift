@@ -14,7 +14,7 @@ class UsernameVC: UIViewController {
     
     @IBOutlet weak var enterButton: UIButton!
     
-    var username = usernameField
+    var username = ""
     
     override func viewDidLoad() {
         
@@ -25,6 +25,17 @@ class UsernameVC: UIViewController {
         enterButton.layer.shadowOpacity = 0.5
         enterButton.layer.shadowRadius = 0.4
         enterButton.layer.masksToBounds = false
+        enterButton.addTarget(self, action: #selector(self.enterClicked), for: .touchUpInside)
         
     }
+    
+    @objc func enterClicked(sender:UIButton!) {
+        print("Enter Clicked")
+        let username_entered: String = usernameField.text!
+        print("username:", username_entered)
+        print()
+    }
+    
+    
+    
 }
