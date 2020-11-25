@@ -51,7 +51,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="enterButton" destination="1IZ-KL-2OR" id="0Rc-n5-EvC"/>
+                        <outlet property="enterButton" destination="1IZ-KL-2OR" id="ReF-ig-lqq"/>
                         <outlet property="usernameField" destination="7ZE-gr-Wy0" id="OSL-cc-yc7"/>
                     </connections>
                 </viewController>
@@ -174,7 +174,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ehx-aM-4mL" kind="show" id="O5k-Wr-oOO"/>
+                                    <action selector="passPharmacy:" destination="VJn-Cm-iV3" eventType="touchUpInside" id="ray-WO-KMr"/>
+                                    <segue destination="ehx-aM-4mL" kind="show" id="O5k-Wr-oOO">
+                                        <segue key="commit" inheritsFrom="parent" id="rKs-F2-gzn"/>
+                                        <segue key="preview" inheritsFrom="commit" id="5bi-bu-mEy"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -226,6 +230,9 @@
             <point key="canvasLocation" x="-314.49275362318843" y="-745.3125"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="O5k-Wr-oOO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="remedy title" width="408" height="136"/>
         <systemColor name="labelColor">

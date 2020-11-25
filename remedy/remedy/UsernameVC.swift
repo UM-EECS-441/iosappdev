@@ -25,15 +25,15 @@ class UsernameVC: UIViewController {
         enterButton.layer.shadowOpacity = 0.5
         enterButton.layer.shadowRadius = 0.4
         enterButton.layer.masksToBounds = false
-        enterButton.addTarget(self, action: #selector(self.enterClicked), for: .touchUpInside)
         
     }
     
-    @objc func enterClicked(sender:UIButton!) {
-        print("Enter Clicked")
-        let username_entered: String = usernameField.text!
-        print("username:", username_entered)
-        print()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PharmacyVC {
+            let vc = segue.destination as? PharmacyVC
+            vc?.username = usernameField.text!
+            print("username:", vc?.username)
+        }
     }
     
     

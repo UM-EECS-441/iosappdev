@@ -62,6 +62,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     
     var button_tag = 0
     
+    var username = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -181,6 +183,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
 
         // and start getting user's current location and heading
         locmanager.startUpdatingLocation()
+        
+        print("username recieved:", username)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -200,6 +204,7 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     
     func getPharmList() {
         print("test")
+        print("username recieved:", username)
         print(geodata.lat, geodata.lon)
         let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(geodata.lat),\(geodata.lon)&rankby=distance&type=drugstore&key=AIzaSyBwVdb3vtPPg_RuaVwaKDlWOLN3woENo6Y"
 
@@ -274,6 +279,7 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
             vc?.pharmacy_address = pharmacies[button_tag].address
             vc?.pharmacy_lat = pharmacies[button_tag].lat
             vc?.pharmacy_lon = pharmacies[button_tag].lon
+            vc?.username = username
         }
     }
     
