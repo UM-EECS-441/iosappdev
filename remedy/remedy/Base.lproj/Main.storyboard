@@ -174,11 +174,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="passPharmacy:" destination="VJn-Cm-iV3" eventType="touchUpInside" id="ray-WO-KMr"/>
-                                    <segue destination="ehx-aM-4mL" kind="show" id="O5k-Wr-oOO">
-                                        <segue key="commit" inheritsFrom="parent" id="rKs-F2-gzn"/>
-                                        <segue key="preview" inheritsFrom="commit" id="5bi-bu-mEy"/>
-                                    </segue>
+                                    <action selector="passPharmacy:" destination="VJn-Cm-iV3" eventType="touchUpInside" id="cyQ-Ba-3EL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -188,12 +184,13 @@
                     <navigationItem key="navigationItem" id="I9A-PJ-N6Z"/>
                     <connections>
                         <outlet property="confirmBoxText" destination="WzT-tl-zPe" id="wLR-xe-TVm"/>
-                        <outlet property="confirmButton" destination="vLq-QY-0OY" id="ena-XF-wcc"/>
+                        <outlet property="confirmButton" destination="vLq-QY-0OY" id="Dyj-Ek-M4n"/>
+                        <segue destination="ehx-aM-4mL" kind="show" identifier="toDriverVC" id="KeW-J6-IVu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJM-aB-1lD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1275.3623188405797" y="-745.3125"/>
+            <point key="canvasLocation" x="-1219" y="-761"/>
         </scene>
         <!--DriverVC-->
         <scene sceneID="tiU-U9-ACc">
@@ -230,9 +227,6 @@
             <point key="canvasLocation" x="-314.49275362318843" y="-745.3125"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="O5k-Wr-oOO"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="remedy title" width="408" height="136"/>
         <systemColor name="labelColor">

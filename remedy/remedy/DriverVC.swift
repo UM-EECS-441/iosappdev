@@ -8,6 +8,15 @@ class DriverVC: UIViewController {
     @IBOutlet var driverBox: UITextView!
     var loaded = false
     
+    var driver_first_name = ""
+    var driver_last_name = ""
+    var driver_car = ""
+    var driver_rating = ""
+    var driver_lat = 0.0
+    var driver_lon = 0.0
+    var driver_duration = ""
+    var driver_distance = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,9 +36,10 @@ class DriverVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(loaded)
-        sleep(4)
+        sleep(2)
         spinner.stopAnimating()
-        driverBox.text = "Boom"
+        driverBox.text = "Driver Found!\n\n\(driver_first_name) \(driver_last_name)\n\(driver_car)\n\(driver_rating)\n\n\(driver_duration) \(driver_distance)"
+        print("driver first name:", driver_first_name)
     }
     
     

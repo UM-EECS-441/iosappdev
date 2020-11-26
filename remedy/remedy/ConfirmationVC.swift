@@ -71,10 +71,27 @@ class ConfirmationVC: UIViewController {
                 print(self.closestDriver.first_name + " " + self.closestDriver.last_name)
                 print(self.closestDriver.car + " " + self.closestDriver.rating)
                 print(self.closestDriver.duration + " " + self.closestDriver.distance)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "toDriverVC", sender: nil)
+                }
             } catch let error as NSError {
                 print(error)
             }
         }
         task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is DriverVC {
+            let vc = segue.destination as? DriverVC
+            vc?.driver_first_name = closestDriver.first_name
+            vc?.driver_last_name = closestDriver.last_name
+            vc?.driver_car = closestDriver.car
+            vc?.driver_rating = closestDriver.rating
+            vc?.driver_lat = Double(closestDriver.lat)
+            vc?.driver_lon = Double(closestDriver.lon)
+            vc?.driver_duration = closestDriver.duration
+            vc?.driver_distance = closestDriver.distance
+        }
     }
 }
