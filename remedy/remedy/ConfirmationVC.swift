@@ -69,11 +69,12 @@ class ConfirmationVC: UIViewController {
                 self.closestDriver.duration = json["duration"] as? String ?? ""
                 self.closestDriver.distance = json["distance"] as? String ?? ""
                 print(self.closestDriver.first_name + " " + self.closestDriver.last_name)
+                print(self.closestDriver.car + " " + self.closestDriver.rating)
+                print(self.closestDriver.duration + " " + self.closestDriver.distance)
             } catch let error as NSError {
                 print(error)
             }
         }
         task.resume()
-        dismiss(animated: true, completion: nil)
     }
 }
