@@ -282,8 +282,6 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
             vc?.username = username
         }
     }
-    
-   
 }
 
 
