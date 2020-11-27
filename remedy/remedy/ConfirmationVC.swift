@@ -71,6 +71,7 @@ class ConfirmationVC: UIViewController {
                 print(self.closestDriver.first_name + " " + self.closestDriver.last_name)
                 print(self.closestDriver.car + " " + self.closestDriver.rating)
                 print(self.closestDriver.duration + " " + self.closestDriver.distance)
+                print(json["ETA"] as? String ?? "")
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "toDriverVC", sender: nil)
                 }
