@@ -15,6 +15,9 @@ class ConfirmationVC: UIViewController {
     var pharmacy_lon = 0.0
     var username = ""
     
+    var user_lat = 0.0
+    var user_lon = 0.0
+    
     var closestDriver = Driver()
     
     @IBOutlet weak var confirmBoxText: UITextView!
@@ -42,11 +45,12 @@ class ConfirmationVC: UIViewController {
         confirmButton.layer.masksToBounds = false
         
         print(pharmacy_name, pharmacy_address, pharmacy_lat, pharmacy_lon, username)
+        print(user_lat, user_lon)
     }
     
 
     @IBAction func passPharmacy(_ sender: Any) {
-        var request = URLRequest(url: URL(string: "https://198.199.90.68/getclosestdriver/\(username)/\(pharmacy_lat)/\(pharmacy_lon)/")!)
+        var request = URLRequest(url: URL(string: "https://198.199.90.68/getclosestdriver/\(username)/\(pharmacy_lat)/\(pharmacy_lon)/\(user_lat)/\(user_lon)/")!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let _ = data, error == nil else {

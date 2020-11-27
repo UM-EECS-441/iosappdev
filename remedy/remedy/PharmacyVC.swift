@@ -193,6 +193,7 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
             geodata.lat = location.coordinate.latitude
             geodata.lon = location.coordinate.longitude
             //getPharmList()
+            print(geodata.lat, geodata.lon)
             locmanager.stopUpdatingLocation()
         }
     }
@@ -280,6 +281,8 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
             vc?.pharmacy_lat = pharmacies[button_tag].lat
             vc?.pharmacy_lon = pharmacies[button_tag].lon
             vc?.username = username
+            vc?.user_lat = geodata.lat
+            vc?.user_lon = geodata.lon
         }
     }
 }
