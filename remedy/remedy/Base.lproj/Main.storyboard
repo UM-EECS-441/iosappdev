@@ -157,7 +157,7 @@
                                 <rect key="frame" x="32" y="79" width="311" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-tl-zPe">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-tl-zPe">
                                 <rect key="frame" x="32" y="199" width="311" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -200,7 +200,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="                                                                 Finding your       Driver" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-A6-AGZ">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="                                                                 Finding your       Driver" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-A6-AGZ">
                                 <rect key="frame" x="36" y="248" width="311" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -239,8 +239,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TYQ-N8-tV6">
-                                <rect key="frame" x="0.0" y="579" width="414" height="317"/>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TYQ-N8-tV6">
+                                <rect key="frame" x="0.0" y="563" width="414" height="333"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -266,47 +266,84 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Driver:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sv7-CU-Xfp">
-                                <rect key="frame" x="169" y="579" width="171" height="33"/>
+                                <rect key="frame" x="54" y="580" width="177" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Distance:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8n-V7-OpH">
-                                <rect key="frame" x="169" y="620" width="177" height="33"/>
+                                <rect key="frame" x="54" y="621" width="177" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="ETA:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-6Q-el6">
-                                <rect key="frame" x="169" y="661" width="177" height="33"/>
+                                <rect key="frame" x="54" y="663" width="177" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car-1299198" translatesAutoresizingMaskIntoConstraints="NO" id="q7s-lr-Vuv">
-                                <rect key="frame" x="37" y="598" width="101" height="77"/>
+                                <rect key="frame" x="218" y="577" width="101" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                             </imageView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" text="Car Model" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="05g-Rl-Top">
+                                <rect key="frame" x="198" y="638" width="140" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JwJ-G7-7fG">
+                                <rect key="frame" x="69" y="44" width="277" height="57"/>
+                                <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gE6-zq-Y39"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="27r-ja-JXg" firstAttribute="top" secondItem="iyZ-HN-DDa" secondAttribute="bottom" constant="8" symbolic="YES" id="00f-Qt-9t8"/>
+                            <constraint firstItem="JwJ-G7-7fG" firstAttribute="top" secondItem="gE6-zq-Y39" secondAttribute="top" id="2NI-YS-QHf"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" id="7iZ-wM-iD0"/>
-                            <constraint firstItem="TYQ-N8-tV6" firstAttribute="top" secondItem="gE6-zq-Y39" secondAttribute="top" constant="535" id="8Aj-Pj-pPh"/>
                             <constraint firstItem="27r-ja-JXg" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="147" id="BMP-tn-pJo"/>
+                            <constraint firstItem="TYQ-N8-tV6" firstAttribute="top" secondItem="gE6-zq-Y39" secondAttribute="top" constant="519" id="CGQ-wF-SyD"/>
                             <constraint firstAttribute="bottom" secondItem="TYQ-N8-tV6" secondAttribute="bottom" id="Cs7-RW-dBz"/>
                             <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="iyZ-HN-DDa" secondAttribute="trailing" constant="68" id="SPf-JE-8OI"/>
+                            <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="JwJ-G7-7fG" secondAttribute="trailing" constant="68" id="ViV-Wm-Hz4"/>
                             <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="27r-ja-JXg" secondAttribute="trailing" constant="146" id="duh-8e-4we"/>
+                            <constraint firstItem="JwJ-G7-7fG" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="69" id="kQb-5D-a5B"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="trailing" secondItem="gE6-zq-Y39" secondAttribute="trailing" id="npc-TQ-zZZ"/>
                             <constraint firstItem="iyZ-HN-DDa" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="68" id="oHM-td-4Wh"/>
                             <constraint firstItem="27r-ja-JXg" firstAttribute="bottom" secondItem="gE6-zq-Y39" secondAttribute="bottom" id="upc-JE-pXL"/>
+                            <constraint firstItem="TYQ-N8-tV6" firstAttribute="top" secondItem="JwJ-G7-7fG" secondAttribute="bottom" constant="462" id="wSl-xa-sC3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XU6-Fl-SSd"/>
@@ -314,6 +351,8 @@
                         <outlet property="bottom_driver_distance" destination="g8n-V7-OpH" id="XBG-8S-Re4"/>
                         <outlet property="bottom_driver_eta" destination="vvH-6Q-el6" id="ElA-6O-awz"/>
                         <outlet property="bottom_driver_first_name" destination="sv7-CU-Xfp" id="2i5-ch-AJe"/>
+                        <outlet property="carField" destination="05g-Rl-Top" id="24h-Bs-s0q"/>
+                        <outlet property="topBar" destination="JwJ-G7-7fG" id="W4i-ef-Chk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIu-Wn-TrB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

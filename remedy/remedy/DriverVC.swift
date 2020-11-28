@@ -43,9 +43,9 @@ class DriverVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(loaded)
-        sleep(2)
+        sleep(1)
         spinner.stopAnimating()
-        driverBox.text = "Driver Found!\n\n\(driver_first_name) \(driver_last_name)\n\(driver_car)\n\(driver_rating)\n\n\(driver_duration) \(driver_distance)"
+        driverBox.text = "Driver Found!\n\n\(driver_first_name) \(driver_last_name)\n\(driver_rating)\n\n\(driver_car)\n"
         print("driver first name:", driver_first_name)
         
         let btn = UIButton(type: .custom) as UIButton
