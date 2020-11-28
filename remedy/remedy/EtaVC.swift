@@ -1,6 +1,7 @@
 import Foundation
 import GooglePlaces
 import UIKit
+import MapKit
 
 
 class EtaVC: UIViewController {
@@ -20,6 +21,8 @@ class EtaVC: UIViewController {
     var user_lat = 0.0
     var user_lon = 0.0
     var eta = ""
+    
+    @IBOutlet var map_screen: MKMapView!
     
     @IBOutlet weak var bottom_driver_first_name: UITextView!
     
@@ -50,6 +53,10 @@ class EtaVC: UIViewController {
         print(user_lon)
         print("eta", eta)
         
+        let userLocation = CLLocation(latitude: user_lat, longitude: user_lon)
+        let pharmacyLocation = CLLocationCoordinate2D(latitude: pharmacy_lat, longitude: pharmacy_lon)
+        // var driverLocation = CLLocation(latitude: driver_lat, longitude: driver_lon)
+        
         topBar.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.9)
         topBar.layer.cornerRadius = 30
         topBar.textColor = UIColor.white
@@ -66,6 +73,38 @@ class EtaVC: UIViewController {
         
         carField.text = driver_car
         
+        let pharm_pin = pin(title: pharmacy_name, locationName: pharmacy_address, coordinate: pharmacyLocation)
+        map_screen.addAnnotation(pharm_pin)
+        
+        map_screen.centerToLocation(userLocation)
     }
     
+}
+
+private extension MKMapView {
+  func centerToLocation(
+    _ location: CLLocation,
+    regionRadius: CLLocationDistance = 8000
+  ) {
+    let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+    setRegion(coordinateRegion, animated: true)
+  }
+}
+
+class pin: NSObject, MKAnnotation {
+  let title: String?
+  let locationName: String?
+  let coordinate: CLLocationCoordinate2D
+
+  init(title: String?, locationName: String?, coordinate: CLLocationCoordinate2D) {
+    self.title = title
+    self.locationName = locationName
+    self.coordinate = coordinate
+
+    super.init()
+  }
+
+  var subtitle: String? {
+    return locationName
+  }
 }

@@ -235,7 +235,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZUT-cc-7iX">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUT-cc-7iX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
@@ -265,7 +265,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Driver:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sv7-CU-Xfp">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Driver:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sv7-CU-Xfp">
                                 <rect key="frame" x="54" y="580" width="177" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -276,7 +276,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Distance:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8n-V7-OpH">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Distance:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8n-V7-OpH">
                                 <rect key="frame" x="54" y="621" width="177" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -287,7 +287,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="ETA:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-6Q-el6">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="ETA:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-6Q-el6">
                                 <rect key="frame" x="54" y="663" width="177" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -352,6 +352,7 @@
                         <outlet property="bottom_driver_eta" destination="vvH-6Q-el6" id="ElA-6O-awz"/>
                         <outlet property="bottom_driver_first_name" destination="sv7-CU-Xfp" id="2i5-ch-AJe"/>
                         <outlet property="carField" destination="05g-Rl-Top" id="24h-Bs-s0q"/>
+                        <outlet property="map_screen" destination="ZUT-cc-7iX" id="96o-ve-Ahj"/>
                         <outlet property="topBar" destination="JwJ-G7-7fG" id="W4i-ef-Chk"/>
                     </connections>
                 </viewController>
