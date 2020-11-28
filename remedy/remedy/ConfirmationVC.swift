@@ -19,6 +19,7 @@ class ConfirmationVC: UIViewController {
     var user_lon = 0.0
     
     var closestDriver = Driver()
+    var eta = ""
     
     @IBOutlet weak var confirmBoxText: UITextView!
     
@@ -37,7 +38,7 @@ class ConfirmationVC: UIViewController {
         confirmBoxText.layer.masksToBounds = false
         
         confirmButton.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.7)
-        confirmButton.layer.cornerRadius = 10
+        confirmButton.layer.cornerRadius = 15
         confirmButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         confirmButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         confirmButton.layer.shadowOpacity = 0.5
@@ -50,7 +51,7 @@ class ConfirmationVC: UIViewController {
     
 
     @IBAction func passPharmacy(_ sender: Any) {
-        var request = URLRequest(url: URL(string: "https://198.199.90.68/getclosestdriver/\(username)/\(pharmacy_lat)/\(pharmacy_lon)/\(user_lat)/\(user_lon)/")!)
+        var request = URLRequest(url: URL(string: "https://198.199.90.68/getclosestdriver/\(username)/\(pharmacy_lat)/\(pharmacy_lon)/\(user_lat)/\(user_lon)")!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let _ = data, error == nil else {
@@ -68,10 +69,11 @@ class ConfirmationVC: UIViewController {
                 self.closestDriver.last_name = json["last_name"] as? String ?? ""
                 self.closestDriver.car = json["car"] as? String ?? ""
                 self.closestDriver.rating = json["rating"] as? String ?? ""
-                self.closestDriver.lat = json["lat"] as? Float ?? 0
-                self.closestDriver.lon = json["lon"] as? Float ?? 0
+                self.closestDriver.lat = json["latitude"] as? Double ?? 0
+                self.closestDriver.lon = json["longitude"] as? Double ?? 0
                 self.closestDriver.duration = json["duration"] as? String ?? ""
                 self.closestDriver.distance = json["distance"] as? String ?? ""
+                self.eta = json["ETA"] as? String ?? ""
                 print(self.closestDriver.first_name + " " + self.closestDriver.last_name)
                 print(self.closestDriver.car + " " + self.closestDriver.rating)
                 print(self.closestDriver.duration + " " + self.closestDriver.distance)
@@ -89,14 +91,22 @@ class ConfirmationVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is DriverVC {
             let vc = segue.destination as? DriverVC
+            vc?.pharmacy_name = pharmacy_name
+            vc?.pharmacy_address = pharmacy_address
+            vc?.pharmacy_lat = pharmacy_lat
+            vc?.pharmacy_lon = pharmacy_lon
             vc?.driver_first_name = closestDriver.first_name
             vc?.driver_last_name = closestDriver.last_name
             vc?.driver_car = closestDriver.car
             vc?.driver_rating = closestDriver.rating
-            vc?.driver_lat = Double(closestDriver.lat)
-            vc?.driver_lon = Double(closestDriver.lon)
+            vc?.driver_lat = closestDriver.lat
+            vc?.driver_lon = closestDriver.lon
             vc?.driver_duration = closestDriver.duration
             vc?.driver_distance = closestDriver.distance
+            vc?.user_lat = user_lat
+            vc?.user_lon = user_lon
+            vc?.eta = eta
+            
         }
     }
 }

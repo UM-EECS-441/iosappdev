@@ -6,8 +6,8 @@ class Driver {
     var last_name: String
     var car: String
     var rating: String
-    var lat: Float
-    var lon: Float
+    var lat: Double
+    var lon: Double
     var duration: String
     var distance: String
     
@@ -22,7 +22,7 @@ class Driver {
         self.distance = ""
     }
     
-    init(first_name: String, last_name: String, car: String, rating: String, lat: Float, lon: Float, duration: String, distance: String) {
+    init(first_name: String, last_name: String, car: String, rating: String, lat: Double, lon: Double, duration: String, distance: String) {
         self.first_name = first_name
         self.last_name = last_name
         self.car = car

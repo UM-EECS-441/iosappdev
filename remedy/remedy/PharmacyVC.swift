@@ -28,7 +28,7 @@ class GeoData_1 {
     }
 }
 
-class PharmacyVC: UIViewController, CLLocationManagerDelegate {
+class PharmacyVC: UIViewController, CLLocationManagerDelegate, UISearchControllerDelegate {
     
 
     @IBOutlet weak var pharmacy_one: UIButton!
@@ -63,6 +63,12 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     var button_tag = 0
     
     var username = ""
+    
+    var searchExecuted = 0
+    var search_pharmacy_name = ""
+    var search_pharmacy_address = ""
+    var search_pharmacy_lat = 0.0
+    var search_pharmacy_lon = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,6 +165,7 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
 
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
+        searchController?.delegate = self
         
         let filter = GMSAutocompleteFilter()
         filter.type = .establishment
@@ -264,22 +271,31 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func clickMe(sender:UIButton!) {
-        print("Button Clicked")
-        print(sender.tag)
-        print(self.pharmacies[sender.tag].address)
-        print("done")
+        searchExecuted = 0
         button_tag = sender.tag
-        
+        performSegue(withIdentifier: "toConfirmation", sender: nil)
+    }
+    
+    @objc func searchOptionClicked() {
+        searchExecuted = 1
         performSegue(withIdentifier: "toConfirmation", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ConfirmationVC {
             let vc = segue.destination as? ConfirmationVC
-            vc?.pharmacy_name = pharmacies[button_tag].name
-            vc?.pharmacy_address = pharmacies[button_tag].address
-            vc?.pharmacy_lat = pharmacies[button_tag].lat
-            vc?.pharmacy_lon = pharmacies[button_tag].lon
+            if searchExecuted == 0 {
+                vc?.pharmacy_name = pharmacies[button_tag].name
+                vc?.pharmacy_address = pharmacies[button_tag].address
+                vc?.pharmacy_lat = pharmacies[button_tag].lat
+                vc?.pharmacy_lon = pharmacies[button_tag].lon
+            }
+            else {
+                vc?.pharmacy_name = search_pharmacy_name
+                vc?.pharmacy_address = search_pharmacy_address
+                vc?.pharmacy_lat = search_pharmacy_lat
+                vc?.pharmacy_lon = search_pharmacy_lon
+            }
             vc?.username = username
             vc?.user_lat = geodata.lat
             vc?.user_lon = geodata.lon
@@ -295,9 +311,13 @@ extension PharmacyVC: GMSAutocompleteResultsViewControllerDelegate {
     searchController?.isActive = false
     
     // Do something with the selected place.
+    search_pharmacy_name = place.name!
+    search_pharmacy_address = place.formattedAddress!
+    search_pharmacy_lat = place.coordinate.latitude
+    search_pharmacy_lon = place.coordinate.longitude
     print("Place name: \(place.name)")
     print("Place address: \(place.formattedAddress)")
-    print("Place attributions: \(place.attributions)")
+    print("Place attributions: \(place.coordinate)")
   }
     //place.openingHours
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
@@ -314,4 +334,10 @@ extension PharmacyVC: GMSAutocompleteResultsViewControllerDelegate {
   func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
   }
+}
+
+extension PharmacyVC {
+    func didDismissSearchController(_ searchController: UISearchController) {
+        searchOptionClicked()
+    }
 }
