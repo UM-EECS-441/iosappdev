@@ -31,6 +31,7 @@ class ConfirmationVC: UIViewController {
         confirmBoxText.layer.cornerRadius = 30
         confirmBoxText.textColor = UIColor.white
         confirmBoxText.text = "\n\(pharmacy_name)\n\n\(pharmacy_address)"
+        confirmBoxText.font = UIFont(name: "ArialRoundedMTBold", size: 28)
         confirmBoxText.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         confirmBoxText.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         confirmBoxText.layer.shadowOpacity = 1.0
@@ -67,6 +68,7 @@ class ConfirmationVC: UIViewController {
                 let json = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
                 self.closestDriver.first_name = json["first_name"] as? String ?? ""
                 self.closestDriver.last_name = json["last_name"] as? String ?? ""
+                self.closestDriver.profile_pic = json["profile"] as? String ?? ""
                 self.closestDriver.car = json["car"] as? String ?? ""
                 self.closestDriver.rating = json["rating"] as? String ?? ""
                 self.closestDriver.lat = json["latitude"] as? Double ?? 0
@@ -75,6 +77,7 @@ class ConfirmationVC: UIViewController {
                 self.closestDriver.distance = json["distance"] as? String ?? ""
                 self.eta = json["ETA"] as? String ?? ""
                 print(self.closestDriver.first_name + " " + self.closestDriver.last_name)
+                print(self.closestDriver.profile_pic)
                 print(self.closestDriver.car + " " + self.closestDriver.rating)
                 print(self.closestDriver.duration + " " + self.closestDriver.distance)
                 print(json["ETA"] as? String ?? "")
@@ -97,6 +100,7 @@ class ConfirmationVC: UIViewController {
             vc?.pharmacy_lon = pharmacy_lon
             vc?.driver_first_name = closestDriver.first_name
             vc?.driver_last_name = closestDriver.last_name
+            vc?.driver_profile_pic = closestDriver.profile_pic
             vc?.driver_car = closestDriver.car
             vc?.driver_rating = closestDriver.rating
             vc?.driver_lat = closestDriver.lat

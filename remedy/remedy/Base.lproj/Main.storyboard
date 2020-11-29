@@ -42,8 +42,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy title" translatesAutoresizingMaskIntoConstraints="NO" id="MAE-8k-xRS">
-                                <rect key="frame" x="32" y="109" width="311" height="99"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy_title" translatesAutoresizingMaskIntoConstraints="NO" id="FCK-sc-19C">
+                                <rect key="frame" x="42" y="119" width="286" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -153,12 +153,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy title" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-A6-yvt">
-                                <rect key="frame" x="32" y="79" width="311" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-tl-zPe">
-                                <rect key="frame" x="32" y="199" width="311" height="300"/>
+                                <rect key="frame" x="32" y="199" width="311" height="341"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -166,7 +162,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-QY-0OY">
-                                <rect key="frame" x="142" y="545" width="90" height="44"/>
+                                <rect key="frame" x="142" y="575" width="90" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -177,6 +173,10 @@
                                     <action selector="passPharmacy:" destination="VJn-Cm-iV3" eventType="touchUpInside" id="cyQ-Ba-3EL"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy_title" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-A6-yvt">
+                                <rect key="frame" x="44" y="92" width="286" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w4A-8C-G8a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -200,18 +200,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0Pi-9s-Zbr">
+                                <rect key="frame" x="141" y="383" width="100" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy_title" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-9y-x8H">
+                                <rect key="frame" x="48" y="138" width="286" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="                                                                 Finding your       Driver" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-A6-AGZ">
-                                <rect key="frame" x="36" y="248" width="311" height="300"/>
+                                <rect key="frame" x="36" y="250" width="311" height="341"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0Pi-9s-Zbr">
-                                <rect key="frame" x="141" y="383" width="100" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p4d-mo-vs2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -225,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJG-zB-eWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-288" y="-745"/>
+            <point key="canvasLocation" x="-288.40579710144931" y="-745.3125"/>
         </scene>
         <!--EtaVC-->
         <scene sceneID="6u2-OH-nDH">
@@ -288,7 +292,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="ETA:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vvH-6Q-el6">
-                                <rect key="frame" x="54" y="663" width="177" height="33"/>
+                                <rect key="frame" x="54" y="663" width="214" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -299,14 +303,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car-1299198" translatesAutoresizingMaskIntoConstraints="NO" id="q7s-lr-Vuv">
-                                <rect key="frame" x="218" y="577" width="101" height="77"/>
+                                <rect key="frame" x="261" y="577" width="101" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" text="Car Model" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="05g-Rl-Top">
-                                <rect key="frame" x="198" y="638" width="140" height="73"/>
+                                <rect key="frame" x="241" y="638" width="140" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -364,6 +368,7 @@
     <resources>
         <image name="car-1299198" width="1000" height="600"/>
         <image name="remedy title" width="408" height="136"/>
+        <image name="remedy_title" width="548" height="180"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -12,6 +12,7 @@ class EtaVC: UIViewController {
     var pharmacy_lon = 0.0
     var driver_first_name = ""
     var driver_last_name = ""
+    var driver_profile_pic = ""
     var driver_car = ""
     var driver_rating = ""
     var driver_lat = 0.0
@@ -43,6 +44,7 @@ class EtaVC: UIViewController {
         print(pharmacy_lon)
         print(driver_first_name)
         print(driver_last_name)
+        print(driver_profile_pic)
         print(driver_car)
         print(driver_rating)
         print(driver_lat)

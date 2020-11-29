@@ -9,4 +9,5 @@ target 'remedy' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Cosmos', '~> 23.0'
 end

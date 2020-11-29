@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Cosmos
 
 class DriverVC: UIViewController {
     
@@ -14,6 +15,7 @@ class DriverVC: UIViewController {
     var pharmacy_lon = 0.0
     var driver_first_name = ""
     var driver_last_name = ""
+    var driver_profile_pic = ""
     var driver_car = ""
     var driver_rating = ""
     var driver_lat = 0.0
@@ -44,8 +46,44 @@ class DriverVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(loaded)
         sleep(1)
+        
+        //profile PIC
+        
+        let driver_profile_pic_url = URL(string: driver_profile_pic)!
+
+        let session = URLSession(configuration: .default)
+
+        let downloadPicTask = session.dataTask(with: driver_profile_pic_url) { (data, response, error) in
+            if let e = error {
+                print("Error downloading profile picture: \(e)")
+            } else {
+                if let res = response as? HTTPURLResponse {
+                    print("Downloaded profile picture with response code \(res.statusCode)")
+                    if let imageData = data {
+                        let driverProfilePic = UIImage(data: imageData)
+                        DispatchQueue.main.async {
+                            let imageView = UIImageView(image: driverProfilePic!)
+                            imageView.frame = CGRect(x: 112, y: 300, width: 150, height: 150)
+                            self.view.addSubview(imageView)
+                        }
+                        // Do something with your image.
+                        
+                    } else {
+                        print("Couldn't get image: Image is nil")
+                    }
+                } else {
+                    print("Couldn't get response code for some reason")
+                }
+            }
+        }
+
+        downloadPicTask.resume()
+        
+        //profile PIC
+        
         spinner.stopAnimating()
-        driverBox.text = "Driver Found!\n\n\(driver_first_name) \(driver_last_name)\n\(driver_rating)\n\n\(driver_car)\n"
+        driverBox.font = UIFont(name: "ArialRoundedMTBold", size: 28)
+        driverBox.text = "Driver Found!\n\n\n\n\n\n\(driver_first_name) \(driver_last_name)\n\(driver_rating)\n\n\(driver_car)\n"
         print("driver first name:", driver_first_name)
         
         let btn = UIButton(type: .custom) as UIButton
@@ -53,7 +91,7 @@ class DriverVC: UIViewController {
         btn.setTitle("OK", for: .normal)
         btn.titleLabel?.textAlignment = NSTextAlignment.center
         btn.titleLabel?.lineBreakMode = .byWordWrapping
-        btn.frame = CGRect(x: 152, y: 590, width: 70, height: 40)
+        btn.frame = CGRect(x: 152, y: 610, width: 70, height: 40)
         btn.layer.cornerRadius = 15
         btn.addTarget(self, action: #selector(self.okClicked), for: .touchUpInside)
         btn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -78,6 +116,7 @@ class DriverVC: UIViewController {
             vc?.pharmacy_lon = pharmacy_lon
             vc?.driver_first_name = driver_first_name
             vc?.driver_last_name = driver_last_name
+            vc?.driver_profile_pic = driver_profile_pic
             vc?.driver_car = driver_car
             vc?.driver_rating = driver_rating
             vc?.driver_lat = driver_lat

@@ -4,6 +4,7 @@ import UIKit
 class Driver {
     var first_name: String
     var last_name: String
+    var profile_pic: String
     var car: String
     var rating: String
     var lat: Double
@@ -14,6 +15,7 @@ class Driver {
     init(){
         self.first_name = ""
         self.last_name = ""
+        self.profile_pic = ""
         self.car = ""
         self.rating = ""
         self.lat = 0
@@ -22,9 +24,10 @@ class Driver {
         self.distance = ""
     }
     
-    init(first_name: String, last_name: String, car: String, rating: String, lat: Double, lon: Double, duration: String, distance: String) {
+    init(first_name: String, last_name: String, profile_pic: String, car: String, rating: String, lat: Double, lon: Double, duration: String, distance: String) {
         self.first_name = first_name
         self.last_name = last_name
+        self.profile_pic = profile_pic
         self.car = car
         self.rating = rating
         self.lat = lat
