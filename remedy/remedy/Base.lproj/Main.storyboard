@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6HL-mI-eHK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6HL-mI-eHK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -261,14 +261,6 @@
                                     <segue destination="6HL-mI-eHK" kind="presentation" modalTransitionStyle="flipHorizontal" id="Ziq-35-zXJ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Driver is on the way!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyZ-HN-DDa">
-                                <rect key="frame" x="68" y="785.5" width="278" height="30.5"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Driver:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sv7-CU-Xfp">
                                 <rect key="frame" x="54" y="580" width="177" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -330,22 +322,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Driver is on the way!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2i-4f-Auc">
+                                <rect key="frame" x="54" y="756" width="308" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gE6-zq-Y39"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="27r-ja-JXg" firstAttribute="top" secondItem="iyZ-HN-DDa" secondAttribute="bottom" constant="8" symbolic="YES" id="00f-Qt-9t8"/>
                             <constraint firstItem="JwJ-G7-7fG" firstAttribute="top" secondItem="gE6-zq-Y39" secondAttribute="top" id="2NI-YS-QHf"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" id="7iZ-wM-iD0"/>
                             <constraint firstItem="27r-ja-JXg" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="147" id="BMP-tn-pJo"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="top" secondItem="gE6-zq-Y39" secondAttribute="top" constant="519" id="CGQ-wF-SyD"/>
                             <constraint firstAttribute="bottom" secondItem="TYQ-N8-tV6" secondAttribute="bottom" id="Cs7-RW-dBz"/>
-                            <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="iyZ-HN-DDa" secondAttribute="trailing" constant="68" id="SPf-JE-8OI"/>
                             <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="JwJ-G7-7fG" secondAttribute="trailing" constant="68" id="ViV-Wm-Hz4"/>
                             <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="27r-ja-JXg" secondAttribute="trailing" constant="146" id="duh-8e-4we"/>
                             <constraint firstItem="JwJ-G7-7fG" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="69" id="kQb-5D-a5B"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="trailing" secondItem="gE6-zq-Y39" secondAttribute="trailing" id="npc-TQ-zZZ"/>
-                            <constraint firstItem="iyZ-HN-DDa" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="68" id="oHM-td-4Wh"/>
                             <constraint firstItem="27r-ja-JXg" firstAttribute="bottom" secondItem="gE6-zq-Y39" secondAttribute="bottom" id="upc-JE-pXL"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="top" secondItem="JwJ-G7-7fG" secondAttribute="bottom" constant="462" id="wSl-xa-sC3"/>
                         </constraints>

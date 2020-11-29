@@ -338,6 +338,8 @@ extension PharmacyVC: GMSAutocompleteResultsViewControllerDelegate {
 
 extension PharmacyVC {
     func didDismissSearchController(_ searchController: UISearchController) {
+      if (search_pharmacy_name != "") {
         searchOptionClicked()
+      }
     }
 }
