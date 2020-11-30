@@ -6,6 +6,8 @@ import MapKit
 
 class EtaVC: UIViewController {
     
+    var username = ""
+    var driver_username = ""
     var pharmacy_name = ""
     var pharmacy_address = ""
     var pharmacy_lat = 0.0
@@ -22,6 +24,8 @@ class EtaVC: UIViewController {
     var user_lat = 0.0
     var user_lon = 0.0
     var eta = ""
+    
+    var live_eta_timer: Timer?
     
     @IBOutlet var map_screen: MKMapView!
     
@@ -109,8 +113,48 @@ class EtaVC: UIViewController {
         map_screen.addAnnotation(pharm_pin)
         
         map_screen.centerToLocation(userLocation)
+        
+        live_eta_timer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(generate_live_eta), userInfo: nil, repeats: true)
     }
     
+    @objc func generate_live_eta() {
+        print("live eta generate")
+        
+        var request = URLRequest(url: URL(string: "https://198.199.90.68/getliveeta/\(username)/\(driver_username)")!)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data, error == nil else {
+                print("NETWORKING ERROR")
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                self.driver_distance = json["distance"] as? String ?? ""
+                self.eta = json["ETA"] as? String ?? ""
+                DispatchQueue.main.async {
+                    print("Generated results from request")
+                    self.bottom_driver_distance.text = "Distance: \(self.driver_distance)"
+                    self.bottom_driver_eta.text = "ETA: \(self.eta)"
+                    print(self.driver_distance)
+                    print(self.eta)
+                    print("Changed on UI")
+                }
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        task.resume()
+        
+    }
+    
+    @IBAction func done_Clicked(_ sender: Any) {
+        live_eta_timer?.invalidate()
+    }
 }
 
 private extension MKMapView {

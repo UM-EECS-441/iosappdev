@@ -10,6 +10,8 @@ class DriverVC: UIViewController {
     @IBOutlet var cosmosView: CosmosView!
     var loaded = false
     
+    var username = ""
+    var driver_username = ""
     var pharmacy_name = ""
     var pharmacy_address = ""
     var pharmacy_lat = 0.0
@@ -134,6 +136,8 @@ class DriverVC: UIViewController {
             vc?.user_lat = user_lat
             vc?.user_lon = user_lon
             vc?.eta = eta
+            vc?.driver_username = driver_username
+            vc?.username = username
         }
     }
     

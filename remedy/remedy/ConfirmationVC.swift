@@ -9,6 +9,8 @@ import UIKit
 
 
 class ConfirmationVC: UIViewController {
+    var driver_username = ""
+    
     var pharmacy_name = ""
     var pharmacy_address = ""
     var pharmacy_lat = 0.0
@@ -76,6 +78,7 @@ class ConfirmationVC: UIViewController {
                 self.closestDriver.duration = json["duration"] as? String ?? ""
                 self.closestDriver.distance = json["distance"] as? String ?? ""
                 self.eta = json["ETA"] as? String ?? ""
+                self.driver_username = json["username"] as? String ?? ""
                 print(self.closestDriver.first_name + " " + self.closestDriver.last_name)
                 print(self.closestDriver.profile_pic)
                 print(self.closestDriver.car + " " + self.closestDriver.rating)
@@ -110,7 +113,8 @@ class ConfirmationVC: UIViewController {
             vc?.user_lat = user_lat
             vc?.user_lon = user_lon
             vc?.eta = eta
-            
+            vc?.driver_username = driver_username
+            vc?.username = username
         }
     }
 }

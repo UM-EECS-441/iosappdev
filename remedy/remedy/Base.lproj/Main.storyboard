@@ -290,6 +290,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="done_Clicked:" destination="I5M-ky-ong" eventType="touchUpInside" id="nDd-De-yPZ"/>
                                     <segue destination="6HL-mI-eHK" kind="presentation" modalTransitionStyle="flipHorizontal" id="Ziq-35-zXJ"/>
                                 </connections>
                             </button>
@@ -399,7 +400,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="VLm-gl-N31"/>
+        <segue reference="Ziq-35-zXJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
