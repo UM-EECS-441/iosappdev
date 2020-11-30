@@ -154,15 +154,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-tl-zPe">
-                                <rect key="frame" x="32" y="199" width="311" height="341"/>
+                                <rect key="frame" x="32" y="199" width="311" height="311"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy_title" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-A6-yvt">
+                                <rect key="frame" x="44" y="92" width="286" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-QY-0OY">
-                                <rect key="frame" x="142" y="575" width="90" height="44"/>
+                                <rect key="frame" x="142" y="542" width="90" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -173,10 +177,6 @@
                                     <action selector="passPharmacy:" destination="VJn-Cm-iV3" eventType="touchUpInside" id="cyQ-Ba-3EL"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy_title" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-A6-yvt">
-                                <rect key="frame" x="44" y="92" width="286" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w4A-8C-G8a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -209,7 +209,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="                                                                 Finding your       Driver" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hMN-A6-AGZ">
-                                <rect key="frame" x="36" y="250" width="311" height="341"/>
+                                <rect key="frame" x="36" y="250" width="311" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>

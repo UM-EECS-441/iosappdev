@@ -59,6 +59,36 @@ class EtaVC: UIViewController {
         let pharmacyLocation = CLLocationCoordinate2D(latitude: pharmacy_lat, longitude: pharmacy_lon)
         // var driverLocation = CLLocation(latitude: driver_lat, longitude: driver_lon)
         
+        //profile PIC
+        let driver_profile_pic_url = URL(string: driver_profile_pic)!
+
+        let session = URLSession(configuration: .default)
+
+        let downloadPicTask = session.dataTask(with: driver_profile_pic_url) { (data, response, error) in
+            if let e = error {
+                print("Error downloading profile picture: \(e)")
+            } else {
+                if let res = response as? HTTPURLResponse {
+                    print("Downloaded profile picture with response code \(res.statusCode)")
+                    if let imageData = data {
+                        let driverProfilePic = UIImage(data: imageData)
+                        DispatchQueue.main.async {
+                            let imageView = UIImageView(image: driverProfilePic!)
+                            imageView.frame = CGRect(x: 85, y: 57, width: 40, height: 40)
+                            self.view.addSubview(imageView)
+                        }
+                    } else {
+                        print("Couldn't get image: Image is nil")
+                    }
+                } else {
+                    print("Couldn't get response code for some reason")
+                }
+            }
+        }
+
+        downloadPicTask.resume()
+        
+        
         topBar.backgroundColor = UIColor(red: 227/255, green: 120/255, blue: 120/255, alpha: 0.9)
         topBar.layer.cornerRadius = 30
         topBar.textColor = UIColor.white

@@ -99,7 +99,7 @@ class DriverVC: UIViewController {
         btn.setTitle("OK", for: .normal)
         btn.titleLabel?.textAlignment = NSTextAlignment.center
         btn.titleLabel?.lineBreakMode = .byWordWrapping
-        btn.frame = CGRect(x: 152, y: 620, width: 70, height: 40)
+        btn.frame = CGRect(x: 152, y: 645, width: 70, height: 40)
         btn.layer.cornerRadius = 15
         btn.addTarget(self, action: #selector(self.okClicked), for: .touchUpInside)
         btn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
