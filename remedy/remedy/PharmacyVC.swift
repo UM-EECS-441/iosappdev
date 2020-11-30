@@ -212,7 +212,7 @@ class PharmacyVC: UIViewController, CLLocationManagerDelegate, UISearchControlle
     
     func getPharmList() {
         print("test")
-        print("username recieved:", username)
+        print("username received:", username)
         print(geodata.lat, geodata.lon)
         let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(geodata.lat),\(geodata.lon)&rankby=distance&type=drugstore&key=AIzaSyBwVdb3vtPPg_RuaVwaKDlWOLN3woENo6Y"
 
