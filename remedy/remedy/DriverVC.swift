@@ -7,6 +7,7 @@ class DriverVC: UIViewController {
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     @IBOutlet var driverBox: UITextView!
+    @IBOutlet var cosmosView: CosmosView!
     var loaded = false
     
     var pharmacy_name = ""
@@ -38,6 +39,7 @@ class DriverVC: UIViewController {
         driverBox.layer.shadowRadius = 0.4
         driverBox.layer.masksToBounds = false
         
+        cosmosView.isHidden = true
         spinner.startAnimating()
         loaded = true
         
@@ -66,8 +68,6 @@ class DriverVC: UIViewController {
                             imageView.frame = CGRect(x: 112, y: 300, width: 150, height: 150)
                             self.view.addSubview(imageView)
                         }
-                        // Do something with your image.
-                        
                     } else {
                         print("Couldn't get image: Image is nil")
                     }
@@ -79,11 +79,19 @@ class DriverVC: UIViewController {
 
         downloadPicTask.resume()
         
-        //profile PIC
+        // Star Rating
+        cosmosView.isHidden = false
+        cosmosView.settings.updateOnTouch = false
+        cosmosView.settings.fillMode = .precise
+        cosmosView.backgroundColor = nil
+        cosmosView.rating = Double(driver_rating) ?? 0
+        cosmosView.settings.filledColor = UIColor.black
+        cosmosView.settings.emptyBorderColor = UIColor.black
+        cosmosView.settings.filledBorderColor = UIColor.black
         
         spinner.stopAnimating()
         driverBox.font = UIFont(name: "ArialRoundedMTBold", size: 28)
-        driverBox.text = "Driver Found!\n\n\n\n\n\n\(driver_first_name) \(driver_last_name)\n\(driver_rating)\n\n\(driver_car)\n"
+        driverBox.text = "Driver Found!\n\n\n\n\n\n\n\(driver_first_name) \(driver_last_name)\n\n\(driver_car)\n"
         print("driver first name:", driver_first_name)
         
         let btn = UIButton(type: .custom) as UIButton
@@ -91,7 +99,7 @@ class DriverVC: UIViewController {
         btn.setTitle("OK", for: .normal)
         btn.titleLabel?.textAlignment = NSTextAlignment.center
         btn.titleLabel?.lineBreakMode = .byWordWrapping
-        btn.frame = CGRect(x: 152, y: 610, width: 70, height: 40)
+        btn.frame = CGRect(x: 152, y: 620, width: 70, height: 40)
         btn.layer.cornerRadius = 15
         btn.addTarget(self, action: #selector(self.okClicked), for: .touchUpInside)
         btn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
