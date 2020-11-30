@@ -65,7 +65,7 @@ class DriverVC: UIViewController {
                         let driverProfilePic = UIImage(data: imageData)
                         DispatchQueue.main.async {
                             let imageView = UIImageView(image: driverProfilePic!)
-                            imageView.frame = CGRect(x: 112, y: 300, width: 150, height: 150)
+                            imageView.frame = CGRect(x: 112, y: 315, width: 150, height: 150)
                             self.view.addSubview(imageView)
                         }
                     } else {
