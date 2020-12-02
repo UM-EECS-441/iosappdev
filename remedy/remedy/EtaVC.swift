@@ -78,7 +78,7 @@ class EtaVC: UIViewController {
                         let driverProfilePic = UIImage(data: imageData)
                         DispatchQueue.main.async {
                             let imageView = UIImageView(image: driverProfilePic!)
-                            imageView.frame = CGRect(x: 85, y: 57, width: 40, height: 40)
+                            imageView.frame = CGRect(x: 68, y: 53, width: 40, height: 40)
                             self.view.addSubview(imageView)
                         }
                     } else {

@@ -43,7 +43,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy_title" translatesAutoresizingMaskIntoConstraints="NO" id="FCK-sc-19C">
-                                <rect key="frame" x="42" y="119" width="286" height="87"/>
+                                <rect key="frame" x="45" y="119" width="286" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -119,7 +119,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="remedy_title" translatesAutoresizingMaskIntoConstraints="NO" id="Rb6-Cd-3aD">
-                                <rect key="frame" x="153" y="37" width="74" height="20"/>
+                                <rect key="frame" x="150" y="37" width="74" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDA-we-C9u">
@@ -286,7 +286,7 @@
                                 <rect key="frame" x="147" y="824" width="121" height="38"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" title="Exit">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -346,7 +346,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JwJ-G7-7fG">
-                                <rect key="frame" x="69" y="44" width="277" height="57"/>
+                                <rect key="frame" x="56" y="44" width="303" height="57"/>
                                 <color key="backgroundColor" red="0.90881741049999998" green="0.70223730799999995" blue="0.69019669289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -370,11 +370,11 @@
                             <constraint firstItem="27r-ja-JXg" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="147" id="BMP-tn-pJo"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="top" secondItem="gE6-zq-Y39" secondAttribute="top" constant="519" id="CGQ-wF-SyD"/>
                             <constraint firstAttribute="bottom" secondItem="TYQ-N8-tV6" secondAttribute="bottom" id="Cs7-RW-dBz"/>
-                            <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="JwJ-G7-7fG" secondAttribute="trailing" constant="68" id="ViV-Wm-Hz4"/>
+                            <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="JwJ-G7-7fG" secondAttribute="trailing" constant="55" id="P0R-vF-Q9j"/>
                             <constraint firstItem="X2i-4f-Auc" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="54" id="caL-U1-6J5"/>
+                            <constraint firstItem="JwJ-G7-7fG" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="56" id="d4O-LA-a6t"/>
                             <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="27r-ja-JXg" secondAttribute="trailing" constant="146" id="duh-8e-4we"/>
                             <constraint firstItem="gE6-zq-Y39" firstAttribute="trailing" secondItem="X2i-4f-Auc" secondAttribute="trailing" constant="52" id="kIf-Ql-tTt"/>
-                            <constraint firstItem="JwJ-G7-7fG" firstAttribute="leading" secondItem="gE6-zq-Y39" secondAttribute="leading" constant="69" id="kQb-5D-a5B"/>
                             <constraint firstItem="TYQ-N8-tV6" firstAttribute="trailing" secondItem="gE6-zq-Y39" secondAttribute="trailing" id="npc-TQ-zZZ"/>
                             <constraint firstItem="27r-ja-JXg" firstAttribute="top" secondItem="X2i-4f-Auc" secondAttribute="bottom" constant="8" symbolic="YES" id="rba-AY-eB3"/>
                             <constraint firstItem="27r-ja-JXg" firstAttribute="bottom" secondItem="gE6-zq-Y39" secondAttribute="bottom" id="upc-JE-pXL"/>
@@ -396,11 +396,6 @@
             <point key="canvasLocation" x="628.98550724637687" y="-745.3125"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="kmx-Km-BSe">
-            <size key="intrinsicContentSize" width="145" height="25"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Ziq-35-zXJ"/>
     </inferredMetricsTieBreakers>
