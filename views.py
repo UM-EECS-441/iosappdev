@@ -475,6 +475,8 @@ def updateDriver(request):
     json_data = json.loads(request.body)
     cursor = connection.cursor()
     cursor.execute(f"UPDATE drivers SET latitude = {json_data['latitude']}, longitude = {json_data['longitude']}, status = '{json_data['status']}' WHERE username = '{json_data['username']}'")
+    if json_data['status'] = "Available":
+        cursor.execute(f"UPDATE drivers SET pharm_lat = NULL, pharm_lon = NULL, status = 'Available' WHERE username = '{json_data['username']}'")
     return JsonResponse({})
 
 
