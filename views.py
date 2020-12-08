@@ -234,22 +234,22 @@ def optRoute(driver_username):
         durationfrom3to2 = matrix["rows"][0]["elements"][1]["duration"]["value"]
         
         options = []
-        # distance from pharm to 1 to 2 to 3
+        # distance from pharmacy to user1 to user2 to user3
         options.append(durationfrompharmto1 + durationfrom1to2 + durationfrom2to3)
 
-        # distance from pharm to 1 to 3 to 2
+        # distance from pharmacy to user1 to user3 to user2
         options.append(durationfrompharmto1 + durationfrom1to3 + durationfrom3to2)
 
-        # distance from pharm to 2 to 1 to 3
+        # distance from pharmacy to user2 to user1 to user3
         options.append(durationfrompharmto2 + durationfrom2to1 + durationfrom1to3)
 
-        # distance from pharm to 2 to 3 to 1 
+        # distance from pharmacy to user2 to user3 to user1 
         options.append(durationfrompharmto2 + durationfrom2to3 + durationfrom3to1)
 
-        # distance from pharm to 3 to 1 to 2
+        # distance from pharmacy to user3 to user1 to user2
         options.append(durationfrompharmto3 + durationfrom3to1 + durationfrom1to2)
 
-        # distance from pharm to 3 to 2 to 1
+        # distance from pharmacy to user3 to user2 to user1
         options.append(durationfrompharmto3 + durationfrom3to2 + durationfrom2to1)
 
         opt_option = options.index(min(options))
@@ -314,10 +314,10 @@ def nearestNeighbors(driver_username, pharmacy_lat, pharmacy_lon):
 @csrf_exempt
 def getclosestdriver(request, username, lat, lon, username_lat, username_lon):
     # Gets the closest driver from the customer's selected pharmacy. Assigns same driver to up to 3 users without range restrictions
-    # If adding more customers to the driver after 3rd one, the next customer must be within 3000m (~2m)
+    # If adding more customers to the driver after 5th one, the next customer must be within 3000m (~2m)
     if request.method != 'GET':
         return HttpResponse(status=404)
-    
+    # Get all driver info from database
     gmaps = googlemaps.Client(key='AIzaSyCnpaIHR9YUqjRX3RxutTaKALh4E6qLbFQ')
     origins = []
     destinations = []
@@ -340,6 +340,7 @@ def getclosestdriver(request, username, lat, lon, username_lat, username_lon):
         driver.last_name = row[8]
         origins.append(row[1] + ' ' + row[2])
         driver_info.append(driver)
+    # Retrieve all drivers' distances using gmaps call
     destinations.append(str(pharmacyLat) + ' ' + str(pharmacyLon))
     matrix = gmaps.distance_matrix(origins, destinations, mode="driving")
     for count, info in enumerate(matrix['rows']):
@@ -358,9 +359,11 @@ def getclosestdriver(request, username, lat, lon, username_lat, username_lon):
         driver.distance_value = info["elements"][0]["distance"]["value"]
         driver.current_address = matrix["origin_addresses"][count]
         closest_drivers.append(driver)
+    # Sort closest_drivers list by drive duration
     closest_drivers.sort(key=lambda b: b.get_duration()) 
     index = 0
     loop = True
+    # Loop sorted closest drivers and choose nearest available based on selection criteria
     while loop:
         closest_driver = {
                         "username": closest_drivers[index].username,
@@ -379,10 +382,12 @@ def getclosestdriver(request, username, lat, lon, username_lat, username_lon):
         cursor.execute(f"SELECT status FROM drivers WHERE drivers.username = '{closest_drivers[index].username}'")
         current_status = cursor.fetchone()[0]
         
+        # Ignore if the driver is already completing a delivery
         if current_status == "user":
             index += 1
             continue
         
+        # If driver is on the way to a pharmacy, ignore the driver if the pharmacy is different from selected pharmacy.
         elif current_status == "pharmacy":
             cursor.execute(f"SELECT pharm_lat, pharm_lon FROM drivers WHERE username = '{closest_drivers[index].username}'")
             past_pharm = cursor.fetchone()
@@ -392,15 +397,15 @@ def getclosestdriver(request, username, lat, lon, username_lat, username_lon):
             if not is_within_range(closest_drivers[index].username, username_lat, username_lon):
                 index += 1
                 continue
-            # closest_driver["range"] = is_within_range(closest_drivers[index].username, username_lat, username_lon)
-            
+        # Assign customer's order in the database to driver that "qualifies"
         cursor.execute('INSERT INTO customers (driver_username, customer_username, customer_latitude, customer_longitude, delivery_order) VALUES '
                     '(%s, %s, %s, %s, %s);', (closest_drivers[index].username, username, username_lat, username_lon, int(0)))
         cursor.execute(f"UPDATE drivers SET status = 'pharmacy', pharm_lat = {pharmacyLat}, pharm_lon = {pharmacyLon} WHERE username = '{closest_drivers[index].username}'")
         loop = False    
-        
-    values = []
+    # Start calculating the optimal path with current set of deliveries
     optRoute(closest_driver["username"])
+    values = []
+    # Calculate the inital estimate of ETA to provide to the front-end
     values = getEta(username, closest_driver["username"])
     closest_driver["ETA"] = values[0]
     closest_driver["distance"] = values[1]
@@ -408,10 +413,12 @@ def getclosestdriver(request, username, lat, lon, username_lat, username_lon):
 
 
 def getEta(username, driver_username):
+    # Get necessary driver and customer info from database
     gmaps = googlemaps.Client(key='AIzaSyCnpaIHR9YUqjRX3RxutTaKALh4E6qLbFQ')
     cursor = connection.cursor()
     cursor.execute(f"SELECT delivery_order FROM customers WHERE driver_username = '{driver_username}' and customer_username = '{username}'")
     delivery_order = cursor.fetchone()[0]
+    # Set list of deliveries in order assigned in the table
     cursor.execute(f"SELECT * FROM customers WHERE driver_username = '{driver_username}' ORDER BY delivery_order")
     deliveries = cursor.fetchmany(delivery_order)
     cursor.execute(f"SELECT latitude, longitude FROM drivers WHERE username = '{driver_username}'")
@@ -426,7 +433,7 @@ def getEta(username, driver_username):
     
     total_duration = 0 #initialize total duration
     total_distance = 0 #initialize total distance
-    
+    # Calculate from driver to pharmacy to users (according to delivery order)
     if status == 'pharmacy':
         # driver to pharmacy
         duration_distance = durationDistance(driver_origin[0], driver_origin[1], pharmacy_lat, pharmacy_lon)
@@ -440,7 +447,7 @@ def getEta(username, driver_username):
             total_duration += duration_distance["duration"]
             total_distance += duration_distance["distance"]
             old_customer = customer
-    elif status ==  'user':
+    elif status ==  'user': # Calculate from driver to users (according to delivery order)
         for index, customer in enumerate(deliveries):
             if index == 0:
                 duration_distance = durationDistance(driver_origin[0], driver_origin[1], customer[2], customer[3])
@@ -459,7 +466,7 @@ def getEta(username, driver_username):
     
 @csrf_exempt
 def getLiveETA(request, username, driver_username):
-    # just returns the ETA from the database to the front end
+    # just returns the ETA from the database to the front end by calling getEta function
     values = getEta(username, driver_username)
     results = {
         "ETA": values[0],
@@ -470,11 +477,13 @@ def getLiveETA(request, username, driver_username):
 
 @csrf_exempt
 def updateDriver(request):
+    # Updates driver info in database for different stages of delivery
     if request.method != 'POST':
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
     cursor = connection.cursor()
     cursor.execute(f"UPDATE drivers SET latitude = {json_data['latitude']}, longitude = {json_data['longitude']}, status = '{json_data['status']}' WHERE username = '{json_data['username']}'")
+    # Clear driver table of old order info when order complete
     if json_data['status'] = "Available":
         cursor.execute(f"UPDATE drivers SET pharm_lat = NULL, pharm_lon = NULL, status = 'Available' WHERE username = '{json_data['username']}'")
     return JsonResponse({})
@@ -482,6 +491,7 @@ def updateDriver(request):
 
 @csrf_exempt
 def confirmOrder(request):
+    # Updates driver table after order is completed and updates the delivery order for each subsequently assigned customer
     if request.method != 'POST':
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
@@ -494,6 +504,7 @@ def confirmOrder(request):
 
 @csrf_exempt
 def adddriver(request):
+    # Add new driver to the database with all required info
     if request.method != 'POST':
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
