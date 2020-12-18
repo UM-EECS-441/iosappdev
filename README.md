@@ -1,4 +1,4 @@
-# EECS441 F20 iOS App dev
+# UM EECS441 F20 iOS App dev
 
 | Demo  |  Wiki |  Trello  |
 |:-----:|:-----:|:--------:|
